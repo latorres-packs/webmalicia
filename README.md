@@ -1,12 +1,18 @@
 # Web de Malicia — Guía para publicarla en GitHub Pages
 
-Este paquete contiene una web estática (HTML/CSS/JS) del restaurante **Malicia**, lista para subir a GitHub Pages. No necesitas saber programar para publicarla ni para actualizarla después.
+Este paquete contiene la web estática (HTML/CSS/JS) del restaurante **Malicia**, organizada en varias páginas independientes que comparten los mismos estilos. No necesitas saber programar para publicarla ni para actualizarla después.
 
 ## Contenido
 
-- `index.html` — el contenido de la página (textos, secciones)
-- `styles.css` — los estilos visuales (colores, tipografía, diseño)
-- `script.js` — pequeñas interacciones (menú móvil, año en el pie de página)
+- `index.html` — Inicio (presentación + enlaces a las demás páginas)
+- `filosofia.html` — Filosofía del restaurante y el plato estrella
+- `experiencia.html` — Las 5 dimensiones de la marca y el ambiente
+- `equipo.html` — El equipo
+- `reservas.html` — Formulario de reservas
+- `styles.css` — Estilos compartidos por **todas** las páginas (cambiar aquí afecta a toda la web a la vez)
+- `script.js` — Comportamiento compartido (menú móvil, año del pie de página)
+
+Al estar en páginas separadas, si quieres cambiar solo el Equipo, por ejemplo, abres únicamente `equipo.html` — no tienes que buscar entre el resto del contenido.
 
 ## Paso 1 — Crear una cuenta en GitHub (si no tienes)
 
@@ -16,41 +22,39 @@ Este paquete contiene una web estática (HTML/CSS/JS) del restaurante **Malicia*
 
 ## Paso 2 — Crear el repositorio
 
-1. Ya con sesión iniciada, pulsa el botón **"+"** (arriba a la derecha) → **"New repository"**
-2. Ponle un nombre, por ejemplo `malicia-web`
-3. Márcalo como **Public**
-4. NO marques "Add a README file" (ya tienes uno)
+1. Con sesión iniciada, pulsa el botón **"+"** (arriba a la derecha) → **"New repository"**
+2. Ponle un nombre, por ejemplo `webmalicia`
+3. Márcalo como **Public** (GitHub Pages gratis no funciona con repositorios privados)
+4. NO marques "Add a README file" si ya vas a subir el tuyo
 5. Pulsa **"Create repository"**
 
 ## Paso 3 — Subir los archivos
 
-1. En la página del repositorio recién creado, pulsa **"uploading an existing file"** (o ve a **Add file → Upload files**)
-2. Arrastra los tres archivos (`index.html`, `styles.css`, `script.js`) a la ventana
-3. Baja y pulsa **"Commit changes"**
+1. En el repositorio, pulsa **Add file → Upload files**
+2. Arrastra los archivos: `index.html`, `filosofia.html`, `experiencia.html`, `equipo.html`, `reservas.html`, `styles.css` y `script.js`
+3. Pulsa **"Commit changes"**
 
 ## Paso 4 — Activar GitHub Pages
 
-1. En el repositorio, ve a **Settings** (pestaña superior)
-2. En el menú lateral, entra en **Pages**
-3. En "Branch", selecciona **main** y la carpeta **/(root)** → **Save**
-4. Espera 1-2 minutos y recarga la página: arriba te aparecerá la URL pública, algo como:
-   `https://tu-usuario.github.io/malicia-web/`
+1. Ve a **Settings → Pages**
+2. En "Branch", selecciona **main** y la carpeta **/(root)** → **Save**
+3. Espera 1-2 minutos: arriba te aparecerá la URL pública, algo como
+   `https://tu-usuario.github.io/webmalicia/`
 
-¡Con eso ya tienes la web publicada y accesible para cualquiera!
+## Cómo actualizar cualquier página más adelante
 
-## Cómo actualizar la web más adelante
-
-Puedes editarla directamente desde GitHub, sin instalar nada:
-
-1. Entra en el repositorio, abre el archivo que quieras cambiar (por ejemplo `index.html`)
-2. Pulsa el icono del lápiz (✏️) arriba a la derecha del archivo
+1. Entra en el repositorio, abre el archivo de la página que quieras cambiar (por ejemplo `equipo.html`)
+2. Pulsa el icono del lápiz (✏️) arriba a la derecha
 3. Cambia el texto que necesites
-4. Baja y pulsa **"Commit changes"**
-5. En 1-2 minutos el cambio se refleja solo en la web publicada
+4. Pulsa **"Commit changes"**
+5. En 1-2 minutos el cambio se refleja en la web publicada (puedes ver el progreso en la pestaña "Actions")
+
+Si el cambio es de color, tipografía o cualquier cosa visual que se repite en todas las páginas (por ejemplo el color del botón), edita solo `styles.css` — no hace falta tocar cada página una por una.
 
 ## Cosas pendientes de personalizar
 
-- **Dirección, horario, teléfono y email** en la sección de contacto (ahora mismo dicen "Pendiente de añadir")
-- **Fotos reales** del local — hay 3 bloques de ejemplo en la sección "Ambiente" que puedes sustituir por imágenes tuyas (basta con añadir tus fotos al repositorio y cambiar esos bloques por etiquetas `<img>` en el HTML)
-- Los textos de las 5 dimensiones (SENSE, FEEL, THINK, ACT, RELATE) están redactados a partir de lo que me contaste del concepto — revísalos y ajústalos si algo no refleja exactamente tu idea
-- El formulario de contacto es solo de ejemplo (no envía nada todavía); si quieres que funcione de verdad, dímelo y lo conectamos a un servicio gratuito de formularios
+- **Dirección, horario, teléfono y email** — aparecen en el pie de página de cada página (ahora dicen "Pendiente de añadir")
+- **Fotos reales** del local — en `experiencia.html`, sección "Ambiente", hay 3 bloques de ejemplo para sustituir por imágenes tuyas
+- **Nombres y fotos del equipo** — en `equipo.html`, cada ficha tiene un círculo de color en vez de foto y "Pendiente de añadir" en vez de nombre
+- Los textos de las 5 dimensiones (SENSE, FEEL, THINK, ACT, RELATE) y de la filosofía están redactados a partir de lo que me contaste del concepto — revísalos y ajústalos si algo no refleja exactamente tu idea
+- El formulario de reservas es solo de ejemplo (no envía nada todavía); si quieres que funcione de verdad, dímelo y lo conectamos a un servicio gratuito de formularios

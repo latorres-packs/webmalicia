@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservas — Malicia</title>
+<meta name="description" content="Reserva tu mesa en Malicia y ven a probar la brasa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">MALICIA</a>
+    <nav class="nav" id="nav">
+      <a href="filosofia.html">Filosofía</a>
+      <a href="experiencia.html">Experiencia</a>
+      <a href="equipo.html">Equipo</a>
+      <a href="reservas.html" class="active">Reservas</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <p class="eyebrow">Reservas</p>
+    <h1>Ven a probar la brasa</h1>
+  </div>
+</section>
+
+<section class="section alt reservas" id="reservas">
+  <div class="container reservas-inner">
+    <p class="kicker">Reservas</p>
+    <h2>Solicita tu mesa</h2>
+    <p class="reservas-sub">Cuéntanos cuándo quieres venir y te confirmamos la mesa.</p>
+    <form class="contact-form reservas-form" onsubmit="event.preventDefault(); alert('Formulario de ejemplo — conéctalo a tu email o a un servicio de formularios cuando quieras recibir reservas.');">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu email" required>
+      <textarea placeholder="Fecha, hora y número de comensales" rows="3" required></textarea>
+      <button type="submit" class="btn">Solicitar reserva</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-contact">Dirección: Pendiente de añadir · Horario: Pendiente de añadir · Teléfono: Pendiente de añadir · Email: Pendiente de añadir</p>
+    <p>&copy; <span id="year"></span> Malicia. Sitio creado como parte de un trabajo académico.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
