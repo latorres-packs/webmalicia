@@ -18,7 +18,16 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-// Transición (fundido) al cambiar de página del menú
+// Transición al entrar en la página: primero se pinta invisible (ver styles.css),
+// y aquí la hacemos aparecer con un pequeño desplazamiento hacia arriba.
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.body.classList.add('page-visible');
+  });
+});
+
+// Transición al salir: al pulsar un enlace del menú, primero se desvanece
+// la página actual y solo entonces se navega a la siguiente.
 document.querySelectorAll('a[href$=".html"]').forEach((link) => {
   link.addEventListener('click', (e) => {
     // No interceptar si se abre en pestaña nueva o con teclas modificadoras
@@ -28,9 +37,10 @@ document.querySelectorAll('a[href$=".html"]').forEach((link) => {
     if (!href) return;
 
     e.preventDefault();
+    document.body.classList.remove('page-visible');
     document.body.classList.add('fade-out');
     setTimeout(() => {
       window.location.href = href;
-    }, 220);
+    }, 320);
   });
 });
