@@ -182,6 +182,67 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 10px 30px rgba(227, 162, 92, 0.3);
 }
 
+/* Hero con imagen (portada) */
+.hero.hero-image {
+  display: block;
+  min-height: 0;
+  background: var(--bg);
+  text-align: center;
+}
+
+.hero-image .hero-img {
+  display: block;
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  margin: 0 auto;
+  /* Funde los bordes laterales e inferior con el fondo de la página */
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%),
+    linear-gradient(to bottom, #000 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%),
+    linear-gradient(to bottom, #000 80%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.hero-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5%;
+  padding: 0 24px;
+}
+
+.hero-overlay .eyebrow {
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.hero-overlay .hero-sub {
+  margin: 0 auto 24px;
+  color: var(--cream);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .hero-overlay {
+    position: static;
+    padding: 8px 24px 64px;
+  }
+}
+
 /* Page header (for subpages, shorter than the home hero) */
 .page-hero {
   position: relative;
