@@ -433,6 +433,87 @@ a.card .card-arrow {
 .ph2 { background: repeating-linear-gradient(45deg, #33251a 0 12px, #241a12 12px 24px); }
 .ph3 { background: repeating-linear-gradient(90deg, #2e2119 0 12px, #241a12 12px 24px); }
 
+/* Experiencia: 5 dimensiones */
+.dim-intro {
+  max-width: 720px;
+  font-size: 1.05rem;
+  margin: 0 0 48px;
+}
+
+.dims {
+  border-top: 1px solid rgba(227, 162, 92, 0.2);
+}
+
+.dim {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(227, 162, 92, 0.2);
+}
+
+.dim-num {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: var(--amber);
+  opacity: 0.5;
+  margin-bottom: 14px;
+}
+
+.dim-head .card-tag { margin-bottom: 8px; }
+
+.dim-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--cream);
+  margin: 0;
+}
+
+.dim-body h3 {
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  margin-bottom: 16px;
+}
+
+.dim-body p {
+  max-width: 680px;
+  margin: 0 0 12px;
+}
+
+.dim-body p:last-child { margin-bottom: 0; }
+
+.dim-body strong {
+  color: var(--amber);
+  font-weight: 500;
+}
+
+.dim-def { font-size: 0.92rem; }
+
+.dim-app {
+  font-size: 1.02rem;
+  color: var(--cream);
+}
+
+.photo-ph {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 760px) {
+  .dim {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 0;
+  }
+  .dim-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .dim-num { font-size: 2.2rem; margin: 0; }
+  .dim-head .card-tag { margin: 0; }
+}
+
 .gallery-note {
   margin-top: 18px;
   font-size: 0.82rem;
