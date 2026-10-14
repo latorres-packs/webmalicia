@@ -707,3 +707,140 @@ a.card .card-arrow {
   .nav.open { display: flex; }
   .nav-toggle { display: flex; }
 }
+
+/* Filosofía: cabecera, pilares y franja de cifras */
+.filo-head {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 40px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid rgba(227, 162, 92, 0.2);
+}
+
+.filo-head h2 { margin-bottom: 0; }
+
+.filo-lead {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--cream);
+  margin: 0;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.pillar {
+  position: relative;
+  padding: 32px 28px;
+  background: linear-gradient(170deg, rgba(92, 58, 34, 0.35), rgba(23, 18, 14, 0.6));
+  border: 1px solid rgba(227, 162, 92, 0.18);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.pillar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 40px;
+  height: 2px;
+  background: var(--amber);
+}
+
+.pillar:hover {
+  border-color: rgba(227, 162, 92, 0.5);
+  transform: translateY(-4px);
+}
+
+.pillar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(227, 162, 92, 0.4);
+  background: var(--amber-soft);
+}
+
+.pillar-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: var(--amber);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pillar-num {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.4rem;
+  line-height: 1;
+  color: var(--amber);
+  opacity: 0.12;
+}
+
+.pillar h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.pillar p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.stats-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(227, 162, 92, 0.2);
+  border-bottom: 1px solid rgba(227, 162, 92, 0.2);
+}
+
+.stat-item {
+  padding: 28px 16px;
+  text-align: center;
+}
+
+.stat-item + .stat-item {
+  border-left: 1px solid rgba(227, 162, 92, 0.2);
+}
+
+.stat-value {
+  display: block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .filo-head { grid-template-columns: 1fr; gap: 20px; }
+  .pillars { grid-template-columns: 1fr; }
+  .stats-band { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(3) { border-left: none; }
+  .stat-item:nth-child(n+3) { border-top: 1px solid rgba(227, 162, 92, 0.2); }
+}
